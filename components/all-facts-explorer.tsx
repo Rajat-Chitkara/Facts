@@ -130,39 +130,39 @@ export default function AllFactsExplorer() {
   }
 
   return (
-    <div className="container mx-auto px-4 py-8 min-h-screen flex flex-col">
-      <header className="flex flex-col md:flex-row justify-between items-center mb-8">
-        <div className="flex items-center gap-4">
+    <div className="container mx-auto px-4 py-4 sm:py-6 md:py-8 min-h-screen flex flex-col">
+      <header className="flex flex-col items-center mb-4 sm:mb-6 md:mb-8">
+        <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
           <Image
             src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL%C2%B7E%202025-03-06%2019.47.43%20-%20A%20stylized%2C%20vintage-style%20illustration%20of%20a%20curious-looking%20owl%20wearing%20a%20suit%20and%20top%20hat.%20The%20owl%20has%20an%20inquisitive%20expression%2C%20with%20detailed%20feath-WC9mpSAFHvRuDjm2otwr0Em5LWH473.webp"
             alt="UselessButInteresting Logo"
             width={48}
             height={48}
-            className="rounded-full"
+            className="rounded-full w-10 h-10 sm:w-12 sm:h-12"
           />
-          <div>
-            <h1 className="text-4xl font-bold text-foreground">UselessButInteresting</h1>
-            <p className="text-muted-foreground">Browse and search all facts</p>
+          <div className="text-center sm:text-left">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">UselessButInteresting</h1>
+            <p className="text-xs sm:text-sm md:text-base text-muted-foreground">Browse and search all facts</p>
           </div>
         </div>
-        <div className="flex items-center mt-4 md:mt-0 gap-4">
-          <Button variant="outline" asChild>
+        <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-3 md:gap-4 w-full sm:w-auto">
+          <Button variant="outline" asChild className="w-full sm:w-auto">
             <Link href="/">
               <ArrowLeft className="h-4 w-4 mr-2" />
               Back to Home
             </Link>
           </Button>
-          <Button variant="outline" asChild>
+          <Button variant="outline" asChild className="w-full sm:w-auto">
             <Link href="/blog">Blog</Link>
           </Button>
         </div>
       </header>
 
       <main className="flex-grow">
-        <div className="mb-8 space-y-4">
-          <h2 className="text-2xl font-bold">All Facts</h2>
+        <div className="mb-4 sm:mb-6 md:mb-8 space-y-3 sm:space-y-4">
+          <h2 className="text-xl sm:text-2xl font-bold">All Facts</h2>
 
-          <div className="flex flex-col md:flex-row gap-4">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
             <div className="relative flex-grow">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
               <Input
@@ -174,7 +174,7 @@ export default function AllFactsExplorer() {
             </div>
 
             <Select value={selectedCategory || ""} onValueChange={(value) => setSelectedCategory(value || null)}>
-              <SelectTrigger className="w-full md:w-[180px]">
+              <SelectTrigger className="w-full sm:w-[180px]">
                 <SelectValue placeholder="All Categories" />
               </SelectTrigger>
               <SelectContent>
@@ -195,25 +195,25 @@ export default function AllFactsExplorer() {
             <span className="ml-2">Loading facts...</span>
           </div>
         ) : filteredFacts.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {filteredFacts.map((fact) => (
               <Card key={fact.id} className="h-full flex flex-col">
                 <CardHeader className="pb-2">
-                  <div className="flex justify-between items-start">
-                    <Badge>{fact.category}</Badge>
-                    {fact.submittedBy && <CardDescription>Submitted by {fact.submittedBy}</CardDescription>}
+                  <div className="flex flex-col sm:flex-row justify-between items-start gap-1 sm:gap-0">
+                    <Badge className="text-xs">{fact.category}</Badge>
+                    {fact.submittedBy && <CardDescription className="text-xs">Submitted by {fact.submittedBy}</CardDescription>}
                   </div>
                 </CardHeader>
                 <CardContent className="py-2 flex-grow">
-                  <p>{fact.text}</p>
+                  <p className="text-sm sm:text-base">{fact.text}</p>
                 </CardContent>
-                <CardFooter className="pt-2 flex justify-between border-t">
+                <CardFooter className="pt-2 flex flex-col sm:flex-row justify-between border-t gap-2">
                   <div className="flex space-x-2">
                     <Button
                       variant="ghost"
                       size="icon"
                       onClick={() => toggleLike(fact.id)}
-                      className={likedFacts.includes(fact.id) ? "text-green-600 dark:text-green-400" : ""}
+                      className={`h-8 w-8 ${likedFacts.includes(fact.id) ? "text-green-600 dark:text-green-400" : ""}`}
                     >
                       <ThumbsUp className="h-4 w-4" />
                     </Button>
@@ -221,11 +221,11 @@ export default function AllFactsExplorer() {
                       variant="ghost"
                       size="icon"
                       onClick={() => toggleDislike(fact.id)}
-                      className={dislikedFacts.includes(fact.id) ? "text-red-600 dark:text-red-400" : ""}
+                      className={`h-8 w-8 ${dislikedFacts.includes(fact.id) ? "text-red-600 dark:text-red-400" : ""}`}
                     >
                       <ThumbsDown className="h-4 w-4" />
                     </Button>
-                    <Button variant="ghost" size="icon" onClick={() => toggleBookmark(fact.id)}>
+                    <Button variant="ghost" size="icon" onClick={() => toggleBookmark(fact.id)} className="h-8 w-8">
                       {bookmarkedFacts.includes(fact.id) ? (
                         <BookmarkCheck className="h-4 w-4 text-primary" />
                       ) : (

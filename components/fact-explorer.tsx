@@ -181,89 +181,87 @@ export default function FactExplorer() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-sunny/20 via-peach/10 to-mint/20">
-      <div className="container mx-auto px-4 py-8 min-h-screen flex flex-col">
-        <header className="flex flex-col md:flex-row justify-between items-center mb-12">
-          <div className="flex items-center gap-6">
+      <div className="container mx-auto px-4 py-4 sm:py-8 min-h-screen flex flex-col">
+        <header className="flex flex-col items-center mb-6 sm:mb-8 md:mb-12">
+          <div className="flex items-center gap-3 sm:gap-6 mb-4 sm:mb-6">
             <div className="relative">
               <Image
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL%C2%B7E%202025-03-06%2019.47.43%20-%20A%20stylized%2C%20vintage-style%20illustration%20of%20a%20curious-looking%20owl%20wearing%20a%20suit%20and%20top%20hat.%20The%20owl%20has%20an%20inquisitive%20expression%2C%20with%20detailed%20feath-WC9mpSAFHvRuDjm2otwr0Em5LWH473.webp"
                 alt="UselessButInteresting Logo"
                 width={64}
                 height={64}
-                className="rounded-full shadow-lg animate-bounce-gentle"
+                className="rounded-full shadow-lg animate-bounce-gentle w-10 h-10 sm:w-16 sm:h-16"
               />
-              <Sparkles className="absolute -top-2 -right-2 h-6 w-6 text-sunny animate-pulse" />
+              <Sparkles className="absolute -top-1 -right-1 sm:-top-2 sm:-right-2 h-4 w-4 sm:h-6 sm:w-6 text-sunny animate-pulse" />
             </div>
-            <div>
-              <h1 className="text-5xl font-black bg-gradient-to-r from-coral via-rose to-purple bg-clip-text text-transparent">
+            <div className="text-center sm:text-left">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-black bg-gradient-to-r from-coral via-rose to-purple bg-clip-text text-transparent">
                 UselessButInteresting
               </h1>
-              <p className="text-xl text-gray-600 font-medium">
+              <p className="text-sm sm:text-lg md:text-xl text-gray-600 font-medium">
                 Discover mind-blowing facts from around the world! 🌍✨
               </p>
             </div>
           </div>
-          <div className="flex items-center mt-6 md:mt-0 gap-6">
-            <div className="flex gap-3">
-              <Button
-                variant="outline"
-                asChild
-                className="rounded-full border-2 border-coral hover:bg-coral hover:text-white transition-all duration-300 font-semibold bg-transparent"
-              >
-                <Link href="/all-facts">🔍 All Facts</Link>
-              </Button>
-              <Button
-                variant="outline"
-                asChild
-                className="rounded-full border-2 border-mint hover:bg-mint hover:text-white transition-all duration-300 font-semibold bg-transparent"
-              >
-                <Link href="/blog">📖 Blog</Link>
-              </Button>
-              <Button
-                variant="outline"
-                asChild
-                className="rounded-full border-2 border-purple hover:bg-purple hover:text-white transition-all duration-300 font-semibold bg-transparent"
-              >
-                <Link href="/about">ℹ️ About</Link>
-              </Button>
-            </div>
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-3 w-full sm:w-auto">
+            <Button
+              variant="outline"
+              asChild
+              className="w-full sm:w-auto rounded-full border-2 border-coral hover:bg-coral hover:text-white transition-all duration-300 font-semibold bg-transparent text-sm sm:text-base"
+            >
+              <Link href="/all-facts">🔍 All Facts</Link>
+            </Button>
+            <Button
+              variant="outline"
+              asChild
+              className="w-full sm:w-auto rounded-full border-2 border-mint hover:bg-mint hover:text-white transition-all duration-300 font-semibold bg-transparent text-sm sm:text-base"
+            >
+              <Link href="/blog">📖 Blog</Link>
+            </Button>
+            <Button
+              variant="outline"
+              asChild
+              className="w-full sm:w-auto rounded-full border-2 border-purple hover:bg-purple hover:text-white transition-all duration-300 font-semibold bg-transparent text-sm sm:text-base"
+            >
+              <Link href="/about">ℹ️ About</Link>
+            </Button>
           </div>
         </header>
 
         <main className="flex-grow">
           <Tabs defaultValue="explore" className="w-full">
-            <TabsList className="grid grid-cols-4 mb-8 bg-white/80 backdrop-blur-sm rounded-2xl p-2 shadow-lg">
+            <TabsList className="grid grid-cols-2 sm:grid-cols-4 mb-4 sm:mb-6 md:mb-8 bg-white/80 backdrop-blur-sm rounded-2xl p-1.5 sm:p-2 shadow-lg gap-1">
               <TabsTrigger
                 value="explore"
-                className="rounded-xl font-semibold data-[state=active]:bg-coral data-[state=active]:text-white"
+                className="rounded-xl text-xs sm:text-sm font-semibold data-[state=active]:bg-coral data-[state=active]:text-white py-2 sm:py-2.5"
               >
                 🎯 Explore
               </TabsTrigger>
               <TabsTrigger
                 value="bookmarks"
-                className="rounded-xl font-semibold data-[state=active]:bg-mint data-[state=active]:text-white"
+                className="rounded-xl text-xs sm:text-sm font-semibold data-[state=active]:bg-mint data-[state=active]:text-white py-2 sm:py-2.5"
               >
                 💖 Bookmarks
               </TabsTrigger>
               <TabsTrigger
                 value="submit"
-                className="rounded-xl font-semibold data-[state=active]:bg-sunny data-[state=active]:text-gray-800"
+                className="rounded-xl text-xs sm:text-sm font-semibold data-[state=active]:bg-sunny data-[state=active]:text-gray-800 py-2 sm:py-2.5"
               >
                 ✨ Submit
               </TabsTrigger>
               <TabsTrigger
                 value="trivia"
-                className="rounded-xl font-semibold data-[state=active]:bg-purple data-[state=active]:text-white"
+                className="rounded-xl text-xs sm:text-sm font-semibold data-[state=active]:bg-purple data-[state=active]:text-white py-2 sm:py-2.5"
               >
                 🎮 Trivia
               </TabsTrigger>
             </TabsList>
 
-            <TabsContent value="explore" className="space-y-8">
-              <div className="flex flex-wrap gap-3 mb-6 justify-center">
+            <TabsContent value="explore" className="space-y-4 sm:space-y-6 md:space-y-8">
+              <div className="flex flex-wrap gap-2 sm:gap-3 mb-4 sm:mb-6 justify-center">
                 <Badge
                   variant={selectedCategory === null ? "default" : "outline"}
-                  className={`cursor-pointer px-6 py-2 rounded-full text-sm font-semibold transition-all duration-300 hover:scale-105 ${
+                  className={`cursor-pointer px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 hover:scale-105 ${
                     selectedCategory === null
                       ? "bg-gradient-to-r from-coral to-rose text-white shadow-lg"
                       : "bg-white/80 hover:bg-coral hover:text-white border-2 border-coral"
@@ -276,7 +274,7 @@ export default function FactExplorer() {
                   <Badge
                     key={category}
                     variant={selectedCategory === category ? "default" : "outline"}
-                    className={`cursor-pointer px-6 py-2 rounded-full text-sm font-semibold transition-all duration-300 hover:scale-105 ${
+                    className={`cursor-pointer px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 hover:scale-105 ${
                       selectedCategory === category
                         ? "bg-gradient-to-r from-coral to-rose text-white shadow-lg"
                         : "bg-white/80 hover:bg-coral hover:text-white border-2 border-coral"
@@ -302,58 +300,58 @@ export default function FactExplorer() {
                     "bg-gradient-to-br from-sunny to-peach"
                   }`}
                 >
-                  <CardHeader className="text-center pb-4">
-                    <div className="flex justify-between items-center mb-4">
-                      <CardTitle className="text-3xl font-black text-white drop-shadow-lg">🤯 Did you know?</CardTitle>
-                      <Badge className="bg-white/90 text-gray-800 px-4 py-2 rounded-full font-bold text-lg shadow-lg">
+                  <CardHeader className="text-center pb-3 sm:pb-4">
+                    <div className="flex flex-col sm:flex-row justify-between items-center mb-3 sm:mb-4 gap-2">
+                      <CardTitle className="text-xl sm:text-2xl md:text-3xl font-black text-white drop-shadow-lg">🤯 Did you know?</CardTitle>
+                      <Badge className="bg-white/90 text-gray-800 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full font-bold text-sm sm:text-base md:text-lg shadow-lg">
                         {currentFact.category}
                       </Badge>
                     </div>
-                    <CardDescription className="text-white/90 font-medium text-lg">
+                    <CardDescription className="text-white/90 font-medium text-sm sm:text-base md:text-lg">
                       Fact #{currentFact.id} • Mind = Blown 🤯
                     </CardDescription>
                   </CardHeader>
-                  <CardContent className="px-8 py-6">
-                    <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-8 shadow-xl">
-                      <p className="text-2xl leading-relaxed text-gray-800 font-medium text-center">
+                  <CardContent className="px-4 sm:px-6 md:px-8 py-4 sm:py-5 md:py-6">
+                    <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-4 sm:p-6 md:p-8 shadow-xl">
+                      <p className="text-base sm:text-xl md:text-2xl leading-relaxed text-gray-800 font-medium text-center">
                         {currentFact.text}
                       </p>
                       <ShareButtons fact={currentFact} />
                     </div>
                   </CardContent>
-                  <CardFooter className="flex justify-between items-center px-8 pb-8">
-                    <div className="flex space-x-3">
+                  <CardFooter className="flex flex-col sm:flex-row justify-between items-stretch sm:items-center px-4 sm:px-6 md:px-8 pb-4 sm:pb-6 md:pb-8 gap-3 sm:gap-4">
+                    <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2 md:space-x-3 w-full sm:w-auto">
                       <Button
                         variant="outline"
-                        size="lg"
+                        size="sm"
                         onClick={() => toggleLike(currentFact.id)}
-                        className={`rounded-full border-2 transition-all duration-300 hover:scale-110 ${
+                        className={`rounded-full border-2 transition-all duration-300 hover:scale-110 text-xs sm:text-sm w-full sm:w-auto ${
                           likedFacts.includes(currentFact.id)
                             ? "bg-green-500 text-white border-green-500 shadow-lg"
                             : "bg-white/90 hover:bg-green-500 hover:text-white border-green-500"
                         }`}
                       >
-                        <ThumbsUp className="h-5 w-5 mr-2" />
+                        <ThumbsUp className="h-4 w-4 mr-1 sm:mr-2" />
                         {likedFacts.includes(currentFact.id) ? "Loved!" : "Love it"}
                       </Button>
                       <Button
                         variant="outline"
-                        size="lg"
+                        size="sm"
                         onClick={() => toggleDislike(currentFact.id)}
-                        className={`rounded-full border-2 transition-all duration-300 hover:scale-110 ${
+                        className={`rounded-full border-2 transition-all duration-300 hover:scale-110 text-xs sm:text-sm w-full sm:w-auto ${
                           dislikedFacts.includes(currentFact.id)
                             ? "bg-red-500 text-white border-red-500 shadow-lg"
                             : "bg-white/90 hover:bg-red-500 hover:text-white border-red-500"
                         }`}
                       >
-                        <ThumbsDown className="h-5 w-5 mr-2" />
+                        <ThumbsDown className="h-4 w-4 mr-1 sm:mr-2" />
                         {dislikedFacts.includes(currentFact.id) ? "Meh" : "Not for me"}
                       </Button>
                       <Button
                         variant="outline"
-                        size="lg"
+                        size="sm"
                         onClick={() => toggleBookmark(currentFact.id)}
-                        className={`rounded-full border-2 transition-all duration-300 hover:scale-110 ${
+                        className={`rounded-full border-2 transition-all duration-300 hover:scale-110 text-xs sm:text-sm w-full sm:w-auto ${
                           bookmarkedFacts.includes(currentFact.id)
                             ? "bg-yellow-500 text-white border-yellow-500 shadow-lg"
                             : "bg-white/90 hover:bg-yellow-500 hover:text-white border-yellow-500"
@@ -361,12 +359,12 @@ export default function FactExplorer() {
                       >
                         {bookmarkedFacts.includes(currentFact.id) ? (
                           <>
-                            <BookmarkCheck className="h-5 w-5 mr-2" />
+                            <BookmarkCheck className="h-4 w-4 mr-1 sm:mr-2" />
                             Saved!
                           </>
                         ) : (
                           <>
-                            <Bookmark className="h-5 w-5 mr-2" />
+                            <Bookmark className="h-4 w-4 mr-1 sm:mr-2" />
                             Save
                           </>
                         )}
@@ -374,10 +372,10 @@ export default function FactExplorer() {
                     </div>
                     <Button
                       onClick={getRandomFact}
-                      size="lg"
-                      className="bg-gradient-to-r from-coral to-rose hover:from-rose hover:to-coral text-white font-bold px-8 py-3 rounded-full shadow-xl transition-all duration-300 hover:scale-110 hover:shadow-2xl"
+                      size="sm"
+                      className="bg-gradient-to-r from-coral to-rose hover:from-rose hover:to-coral text-white font-bold px-4 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 rounded-full shadow-xl transition-all duration-300 hover:scale-110 hover:shadow-2xl text-xs sm:text-sm md:text-base w-full sm:w-auto"
                     >
-                      <Shuffle className="mr-3 h-6 w-6 group-hover:animate-spin" />
+                      <Shuffle className="mr-2 sm:mr-3 h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 group-hover:animate-spin" />
                       Next Amazing Fact! 🎲
                     </Button>
                   </CardFooter>
@@ -395,7 +393,7 @@ export default function FactExplorer() {
 
             <TabsContent value="bookmarks">
               {bookmarkedFactsList.length > 0 ? (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 max-w-6xl mx-auto">
                   {bookmarkedFactsList.map((fact) => (
                     <Card
                       key={fact.id}
@@ -404,38 +402,38 @@ export default function FactExplorer() {
                         "bg-gradient-to-br from-sunny to-peach"
                       }`}
                     >
-                      <CardHeader className="pb-3">
+                      <CardHeader className="pb-2 sm:pb-3">
                         <div className="flex justify-between items-start">
-                          <CardTitle className="text-lg font-bold text-white drop-shadow">Fact #{fact.id}</CardTitle>
-                          <Badge className="bg-white/90 text-gray-800 font-semibold">{fact.category}</Badge>
+                          <CardTitle className="text-base sm:text-lg font-bold text-white drop-shadow">Fact #{fact.id}</CardTitle>
+                          <Badge className="bg-white/90 text-gray-800 font-semibold text-xs sm:text-sm">{fact.category}</Badge>
                         </div>
                       </CardHeader>
-                      <CardContent className="py-3 flex-grow">
-                        <div className="bg-white/95 backdrop-blur-sm rounded-xl p-4">
-                          <p className="text-gray-800 font-medium">{fact.text}</p>
+                      <CardContent className="py-2 sm:py-3 flex-grow">
+                        <div className="bg-white/95 backdrop-blur-sm rounded-xl p-3 sm:p-4">
+                          <p className="text-sm sm:text-base text-gray-800 font-medium">{fact.text}</p>
                           <ShareButtons fact={fact} />
                         </div>
                       </CardContent>
-                      <CardFooter className="pt-3">
+                      <CardFooter className="pt-2 sm:pt-3">
                         <div className="flex space-x-2 w-full">
                           <Button
                             variant="outline"
                             size="sm"
-                            className="flex-1 bg-white/90 hover:bg-green-500 hover:text-white border-green-500 rounded-full font-semibold"
+                            className="flex-1 bg-white/90 hover:bg-green-500 hover:text-white border-green-500 rounded-full font-semibold text-xs sm:text-sm"
                             onClick={() => toggleLike(fact.id)}
                           >
                             <ThumbsUp
-                              className={`h-4 w-4 mr-1 ${likedFacts.includes(fact.id) ? "text-green-600" : ""}`}
+                              className={`h-3 w-3 sm:h-4 sm:w-4 mr-1 ${likedFacts.includes(fact.id) ? "text-green-600" : ""}`}
                             />
                             {likedFacts.includes(fact.id) ? "Loved" : "Love"}
                           </Button>
                           <Button
                             variant="outline"
                             size="sm"
-                            className="flex-1 bg-white/90 hover:bg-red-500 hover:text-white border-red-500 rounded-full font-semibold"
+                            className="flex-1 bg-white/90 hover:bg-red-500 hover:text-white border-red-500 rounded-full font-semibold text-xs sm:text-sm"
                             onClick={() => toggleBookmark(fact.id)}
                           >
-                            <BookmarkCheck className="h-4 w-4 mr-1 text-yellow-600" />
+                            <BookmarkCheck className="h-3 w-3 sm:h-4 sm:w-4 mr-1 text-yellow-600" />
                             Remove
                           </Button>
                         </div>

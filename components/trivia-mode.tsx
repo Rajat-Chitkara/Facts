@@ -112,15 +112,15 @@ export default function TriviaMode({ facts }: TriviaProps) {
     return (
       <Card className="w-full max-w-2xl mx-auto">
         <CardHeader>
-          <CardTitle className="text-center">Game Over!</CardTitle>
-          <CardDescription className="text-center">
+          <CardTitle className="text-center text-xl sm:text-2xl">Game Over!</CardTitle>
+          <CardDescription className="text-center text-sm sm:text-base">
             You scored {score} out of {totalQuestions}
           </CardDescription>
         </CardHeader>
-        <CardContent className="flex flex-col items-center justify-center py-8">
+        <CardContent className="flex flex-col items-center justify-center py-6 sm:py-8 px-4">
           <Trophy
             className={cn(
-              "h-24 w-24 mb-6",
+              "h-16 w-16 sm:h-20 sm:w-20 md:h-24 md:w-24 mb-4 sm:mb-6",
               score === totalQuestions
                 ? "text-yellow-500"
                 : score >= totalQuestions * 0.7
@@ -129,7 +129,7 @@ export default function TriviaMode({ facts }: TriviaProps) {
             )}
           />
 
-          <h3 className="text-2xl font-bold mb-4">
+          <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">
             {score === totalQuestions
               ? "Perfect Score!"
               : score >= totalQuestions * 0.7
@@ -139,7 +139,7 @@ export default function TriviaMode({ facts }: TriviaProps) {
                   : "Better Luck Next Time!"}
           </h3>
 
-          <p className="text-muted-foreground text-center mb-8">
+          <p className="text-sm sm:text-base text-muted-foreground text-center mb-6 sm:mb-8 max-w-md">
             {score === totalQuestions
               ? "You're a fact master! You got every question right!"
               : score >= totalQuestions * 0.7
@@ -149,7 +149,7 @@ export default function TriviaMode({ facts }: TriviaProps) {
                   : "Don't worry, facts can be tricky. Try again to improve your score!"}
           </p>
 
-          <Button onClick={restartGame} className="gap-2">
+          <Button onClick={restartGame} className="gap-2 text-sm sm:text-base">
             <RotateCcw className="h-4 w-4" />
             Play Again
           </Button>
@@ -163,19 +163,19 @@ export default function TriviaMode({ facts }: TriviaProps) {
   return (
     <Card className="w-full max-w-2xl mx-auto">
       <CardHeader>
-        <div className="flex justify-between items-center mb-2">
-          <CardTitle>Fact or Fiction?</CardTitle>
-          <Badge variant="outline">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-2 gap-2">
+          <CardTitle className="text-lg sm:text-xl md:text-2xl">Fact or Fiction?</CardTitle>
+          <Badge variant="outline" className="text-xs sm:text-sm">
             Question {currentQuestion + 1}/{totalQuestions}
           </Badge>
         </div>
-        <CardDescription>Decide whether each statement is true or false.</CardDescription>
+        <CardDescription className="text-sm sm:text-base">Decide whether each statement is true or false.</CardDescription>
         <Progress value={(currentQuestion / totalQuestions) * 100} className="h-2 mt-2" />
       </CardHeader>
-      <CardContent className="py-6">
-        <div className="text-xl font-medium text-center mb-8 px-4">{currentFact.text}</div>
+      <CardContent className="py-4 sm:py-6">
+        <div className="text-base sm:text-lg md:text-xl font-medium text-center mb-6 sm:mb-8 px-2 sm:px-4">{currentFact.text}</div>
 
-        <div className="flex justify-center gap-4">
+        <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 px-2">
           <Button
             variant={
               userAnswer === true
@@ -187,7 +187,7 @@ export default function TriviaMode({ facts }: TriviaProps) {
                 : "outline"
             }
             className={cn(
-              "w-32 h-16 text-lg",
+              "w-full sm:w-32 h-12 sm:h-16 text-base sm:text-lg",
               userAnswer === true && showAnswer && currentFact.isTrue && "bg-green-600 hover:bg-green-700",
             )}
             onClick={() => handleAnswer(true)}
@@ -195,7 +195,7 @@ export default function TriviaMode({ facts }: TriviaProps) {
           >
             {userAnswer === true &&
               showAnswer &&
-              (currentFact.isTrue ? <CheckCircle className="h-5 w-5 mr-2" /> : <XCircle className="h-5 w-5 mr-2" />)}
+              (currentFact.isTrue ? <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5 mr-2" /> : <XCircle className="h-4 w-4 sm:h-5 sm:w-5 mr-2" />)}
             True
           </Button>
 
@@ -210,7 +210,7 @@ export default function TriviaMode({ facts }: TriviaProps) {
                 : "outline"
             }
             className={cn(
-              "w-32 h-16 text-lg",
+              "w-full sm:w-32 h-12 sm:h-16 text-base sm:text-lg",
               userAnswer === false && showAnswer && !currentFact.isTrue && "bg-green-600 hover:bg-green-700",
             )}
             onClick={() => handleAnswer(false)}
@@ -218,7 +218,7 @@ export default function TriviaMode({ facts }: TriviaProps) {
           >
             {userAnswer === false &&
               showAnswer &&
-              (currentFact.isTrue ? <XCircle className="h-5 w-5 mr-2" /> : <CheckCircle className="h-5 w-5 mr-2" />)}
+              (currentFact.isTrue ? <XCircle className="h-4 w-4 sm:h-5 sm:w-5 mr-2" /> : <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5 mr-2" />)}
             False
           </Button>
         </div>
@@ -226,21 +226,21 @@ export default function TriviaMode({ facts }: TriviaProps) {
         {showAnswer && (
           <div
             className={cn(
-              "mt-6 p-4 rounded-lg text-center",
+              "mt-4 sm:mt-6 p-3 sm:p-4 rounded-lg text-center mx-2",
               currentFact.isTrue === userAnswer ? "bg-green-100 dark:bg-green-900/30" : "bg-red-100 dark:bg-red-900/30",
             )}
           >
-            <p className="font-medium">{currentFact.isTrue ? "This fact is TRUE!" : "This fact is FALSE!"}</p>
-            <p className="text-sm mt-1 text-muted-foreground">
+            <p className="font-medium text-sm sm:text-base">{currentFact.isTrue ? "This fact is TRUE!" : "This fact is FALSE!"}</p>
+            <p className="text-xs sm:text-sm mt-1 text-muted-foreground">
               {currentFact.isTrue === userAnswer ? "You got it right!" : "Better luck next time!"}
             </p>
           </div>
         )}
       </CardContent>
-      <CardFooter className="justify-between border-t p-4">
-        <div className="text-sm text-muted-foreground">Score: {score}</div>
-        <Button variant="ghost" size="sm" onClick={restartGame}>
-          <RotateCcw className="h-4 w-4 mr-2" />
+      <CardFooter className="flex-col sm:flex-row justify-between border-t p-3 sm:p-4 gap-2">
+        <div className="text-xs sm:text-sm text-muted-foreground">Score: {score}</div>
+        <Button variant="ghost" size="sm" onClick={restartGame} className="text-xs sm:text-sm">
+          <RotateCcw className="h-3 w-3 sm:h-4 sm:w-4 mr-2" />
           Restart
         </Button>
       </CardFooter>

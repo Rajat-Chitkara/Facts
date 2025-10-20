@@ -66,31 +66,31 @@ export default function FactSubmissionForm() {
   return (
     <Card className="w-full max-w-2xl mx-auto">
       <CardHeader>
-        <CardTitle>Submit a Fact</CardTitle>
-        <CardDescription>
+        <CardTitle className="text-lg sm:text-xl md:text-2xl">Submit a Fact</CardTitle>
+        <CardDescription className="text-sm sm:text-base">
           Share an interesting fact with the community. All submissions are reviewed before being published.
         </CardDescription>
       </CardHeader>
       <CardContent>
         {isSubmitted ? (
-          <div className="flex flex-col items-center justify-center py-8 text-center">
-            <CheckCircle className="h-16 w-16 text-green-500 mb-4" />
-            <h3 className="text-xl font-medium mb-2">Thank you for your submission!</h3>
-            <p className="text-muted-foreground max-w-md">
+          <div className="flex flex-col items-center justify-center py-6 sm:py-8 text-center">
+            <CheckCircle className="h-12 w-12 sm:h-16 sm:w-16 text-green-500 mb-3 sm:mb-4" />
+            <h3 className="text-lg sm:text-xl font-medium mb-2">Thank you for your submission!</h3>
+            <p className="text-sm sm:text-base text-muted-foreground max-w-md px-4">
               Your fact has been submitted for review. We appreciate your contribution to YouWouldn&apos;tBelieve!
             </p>
           </div>
         ) : (
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 sm:space-y-6">
               <FormField
                 control={form.control}
                 name="name"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Your Name</FormLabel>
+                    <FormLabel className="text-sm sm:text-base">Your Name</FormLabel>
                     <FormControl>
-                      <Input placeholder="John Doe" {...field} />
+                      <Input placeholder="John Doe" {...field} className="text-sm sm:text-base" />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -102,32 +102,32 @@ export default function FactSubmissionForm() {
                 name="factText"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Your Fact</FormLabel>
+                    <FormLabel className="text-sm sm:text-base">Your Fact</FormLabel>
                     <FormControl>
-                      <Textarea placeholder="Share an interesting fact..." className="min-h-[120px]" {...field} />
+                      <Textarea placeholder="Share an interesting fact..." className="min-h-[100px] sm:min-h-[120px] text-sm sm:text-base" {...field} />
                     </FormControl>
-                    <FormDescription>Be concise and accurate. Facts should be verifiable.</FormDescription>
+                    <FormDescription className="text-xs sm:text-sm">Be concise and accurate. Facts should be verifiable.</FormDescription>
                     <FormMessage />
                   </FormItem>
                 )}
               />
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <FormField
                   control={form.control}
                   name="category"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Category</FormLabel>
+                      <FormLabel className="text-sm sm:text-base">Category</FormLabel>
                       <Select onValueChange={field.onChange} defaultValue={field.value}>
                         <FormControl>
-                          <SelectTrigger>
+                          <SelectTrigger className="text-sm sm:text-base">
                             <SelectValue placeholder="Select a category" />
                           </SelectTrigger>
                         </FormControl>
                         <SelectContent>
                           {categories.map((category) => (
-                            <SelectItem key={category} value={category}>
+                            <SelectItem key={category} value={category} className="text-sm sm:text-base">
                               {category}
                             </SelectItem>
                           ))}
@@ -143,18 +143,18 @@ export default function FactSubmissionForm() {
                   name="source"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Source (Optional)</FormLabel>
+                      <FormLabel className="text-sm sm:text-base">Source (Optional)</FormLabel>
                       <FormControl>
-                        <Input placeholder="https://example.com/source" {...field} />
+                        <Input placeholder="https://example.com/source" {...field} className="text-sm sm:text-base" />
                       </FormControl>
-                      <FormDescription>Link to where you found this fact.</FormDescription>
+                      <FormDescription className="text-xs sm:text-sm">Link to where you found this fact.</FormDescription>
                       <FormMessage />
                     </FormItem>
                   )}
                 />
               </div>
 
-              <Button type="submit" className="w-full" disabled={isSubmitting}>
+              <Button type="submit" className="w-full text-sm sm:text-base" disabled={isSubmitting}>
                 {isSubmitting ? "Submitting..." : "Submit Fact"}
               </Button>
             </form>

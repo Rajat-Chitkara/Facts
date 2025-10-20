@@ -118,28 +118,28 @@ export function ShareButtons({ fact, compact = false }: ShareButtonsProps) {
   }
 
   return (
-    <div className="mt-4 pt-4 border-t">
-      <p className="text-sm text-muted-foreground mb-2">Share this fact:</p>
-      <div className="flex flex-wrap gap-2">
-        <Button variant="outline" size="sm" className="flex items-center gap-1" onClick={() => shareFact("twitter")}>
-          <FaTwitter className="h-4 w-4 text-[#1DA1F2]" />
-          <span className="sr-only md:not-sr-only md:text-xs">Twitter</span>
+    <div className="mt-3 sm:mt-4 pt-3 sm:pt-4 border-t">
+      <p className="text-xs sm:text-sm text-muted-foreground mb-2">Share this fact:</p>
+      <div className="flex flex-wrap gap-1.5 sm:gap-2">
+        <Button variant="outline" size="sm" className="flex items-center gap-1 h-8 sm:h-9 px-2 sm:px-3" onClick={() => shareFact("twitter")}>
+          <FaTwitter className="h-3 w-3 sm:h-4 sm:w-4 text-[#1DA1F2]" />
+          <span className="sr-only sm:not-sr-only sm:text-xs">Twitter</span>
         </Button>
-        <Button variant="outline" size="sm" className="flex items-center gap-1" onClick={() => shareFact("facebook")}>
-          <FaFacebook className="h-4 w-4 text-[#4267B2]" />
-          <span className="sr-only md:not-sr-only md:text-xs">Facebook</span>
+        <Button variant="outline" size="sm" className="flex items-center gap-1 h-8 sm:h-9 px-2 sm:px-3" onClick={() => shareFact("facebook")}>
+          <FaFacebook className="h-3 w-3 sm:h-4 sm:w-4 text-[#4267B2]" />
+          <span className="sr-only sm:not-sr-only sm:text-xs">Facebook</span>
         </Button>
-        <Button variant="outline" size="sm" className="flex items-center gap-1" onClick={() => shareFact("reddit")}>
-          <FaReddit className="h-4 w-4 text-[#FF4500]" />
-          <span className="sr-only md:not-sr-only md:text-xs">Reddit</span>
+        <Button variant="outline" size="sm" className="flex items-center gap-1 h-8 sm:h-9 px-2 sm:px-3" onClick={() => shareFact("reddit")}>
+          <FaReddit className="h-3 w-3 sm:h-4 sm:w-4 text-[#FF4500]" />
+          <span className="sr-only sm:not-sr-only sm:text-xs">Reddit</span>
         </Button>
-        <Button variant="outline" size="sm" className="flex items-center gap-1" onClick={() => shareFact("whatsapp")}>
-          <FaWhatsapp className="h-4 w-4 text-[#25D366]" />
-          <span className="sr-only md:not-sr-only md:text-xs">WhatsApp</span>
+        <Button variant="outline" size="sm" className="flex items-center gap-1 h-8 sm:h-9 px-2 sm:px-3" onClick={() => shareFact("whatsapp")}>
+          <FaWhatsapp className="h-3 w-3 sm:h-4 sm:w-4 text-[#25D366]" />
+          <span className="sr-only sm:not-sr-only sm:text-xs">WhatsApp</span>
         </Button>
-        <Button variant="outline" size="sm" className="flex items-center gap-1" onClick={() => shareFact("copy")}>
-          <FaLink className="h-4 w-4" />
-          <span className="sr-only md:not-sr-only md:text-xs">Copy Link</span>
+        <Button variant="outline" size="sm" className="flex items-center gap-1 h-8 sm:h-9 px-2 sm:px-3" onClick={() => shareFact("copy")}>
+          <FaLink className="h-3 w-3 sm:h-4 sm:w-4" />
+          <span className="sr-only sm:not-sr-only sm:text-xs">Copy Link</span>
         </Button>
       </div>
     </div>
