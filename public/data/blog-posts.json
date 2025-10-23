@@ -1,32 +1,44 @@
 {
   "version": "1.0.0",
-  "lastUpdated": "2024-01-15T10:00:00Z",
+  "lastUpdated": "2025-10-23T10:04:34Z",
   "posts": [
     {
       "id": "sample-1",
       "title": "Whittier, Alaska: The Town Under One Roof – A Deep Dive into Life in America's Most Unique Community",
       "slug": "whittier-alaska",
       "excerpt": "Imagine a community where your entire world—your home, school, grocery store, and even the police station—exists within the confines of a single building.",
-      "content": "<p>Imagine a community where your entire world—your home, school, grocery store, and even the police station—exists within the confines of a single building. Welcome to Whittier, Alaska, a town so unique that it challenges our very notion of what a community can be.</p><h2>The Building That Is a Town</h2><p>Begich Towers, a 14-story concrete monolith, houses nearly all of Whittier's 272 residents. Built in the 1950s as military housing, this brutalist structure has evolved into something unprecedented: a vertical town where neighbors aren't just next door—they're upstairs, downstairs, and down the hall.</p><h2>Life Under One Roof</h2><p>Within Begich Towers, residents have access to a post office, general store, laundromat, health clinic, and even a small hotel for visitors. The building's first floor houses the city offices and police department, while the school is connected via an underground tunnel.</p><p>This unique living arrangement creates an intimacy rarely found in modern communities. Children play in heated hallways during harsh winters, and impromptu gatherings happen in the building's common areas. Everyone knows everyone, and privacy takes on a different meaning when your mayor might live three floors up.</p><h2>The Challenges of Isolation</h2><p>Whittier's isolation is both its charm and its challenge. Accessible only by a single-lane tunnel that alternates traffic direction every 30 minutes, the town can feel cut off from the outside world. During winter storms, residents might not see sunlight for days, relying entirely on their building community for social interaction.</p><p>Yet this isolation has fostered remarkable resilience and cooperation. When someone needs help, the entire building responds. Medical emergencies, childcare, and even simple favors become community efforts.</p><h2>A Glimpse into Alternative Living</h2><p>Whittier represents more than just an oddity—it's a functioning example of high-density, community-focused living. As urban planners worldwide grapple with housing crises and social isolation, this Alaskan town offers insights into how physical proximity can foster genuine community bonds.</p><p>Whether Whittier's model could work elsewhere remains debatable, but its existence proves that unconventional approaches to community living can not only survive but thrive in the most challenging environments.</p>",
+      "content": "<p>Imagine a community where your entire world—your home, school, grocery store, and even the police station—exists within the confines of a single building. Welcome to Whittier, Alaska. [Content truncated for brevity]</p>",
       "coverImage": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&h=400&fit=crop",
       "published": true,
       "createdAt": "2025-01-24T00:00:00.000Z",
-      "tags": ["community", "architecture", "alaska", "lifestyle"],
+      "tags": [
+        "community",
+        "architecture",
+        "alaska",
+        "lifestyle"
+      ],
       "author": "UselessButInteresting Team"
-    }
+    },
     {
       "id": "2",
       "title": "Into the Glass Storm – Planet HD 189733 b",
       "slug": "into-the-glass-storm-hd189733b",
       "excerpt": "Far away in the constellation of Vulpecula, this blue world looks calm and peaceful—but it’s actually a raging inferno where glass rains sideways in supersonic winds.",
-      "content": "<p>Far away in the constellation called Vulpecula, about 64.5 light-years from Earth, there is a strange and beautiful planet. It’s called <strong>HD 189733 b</strong>, and when astronomers in France first discovered it on <strong>October 5, 2005</strong>, they were amazed by its deep blue color. At first glance, it looks like a calm, ocean-covered world—but looks can be very deceiving.</p>\n\n<p>HD 189733 b is a giant planet, much like Jupiter, but far more extreme. It circles its star so closely that it completes one full orbit in just two Earth days. That means a year there lasts only a weekend for us. The planet is about 13 times closer to its star than Mercury is to the Sun, and that closeness makes it unbelievably hot—around <strong>1,700 degrees Fahrenheit</strong>.</p>\n\n<p>Because it’s so near its star, the planet is locked by gravity—just like the Moon always shows one side to Earth. One half of the planet always faces the blazing star, while the other half is forever dark. Between these two sides, fierce winds race at over <strong>5,000 miles per hour</strong>, faster than the speed of sound. These winds are so powerful they could tear apart anything that tried to fly through them.</p>\n\n<p>Scientists believe that this wild weather creates something truly strange—it may <strong>rain glass</strong>, blown sideways by the howling winds. The blue color that makes the planet look so peaceful actually comes from tiny glass-like particles in the air that scatter blue light, not from oceans or water. It’s a world of storms, heat, and shattered light—a place that looks calm from far away but is pure chaos up close.</p>\n\n<p>Recently, astronomers made another discovery. They found signs of <strong>hydrogen sulfide</strong> in the planet’s atmosphere—the same gas that smells like rotten eggs on Earth. It’s not a sign of life, since this planet is far too hot for anything to survive, but it helps scientists learn how different kinds of planets form and what their atmospheres are made of.</p>\n\n<p>So while HD 189733 b may never host life, it teaches us more about how planets across the universe are born and change. It shines in space like a blue jewel—a beautiful but deadly world, a reminder that in the universe, beauty and danger often exist side by side.</p>",
+      "content": "<p>Far away in the constellation called Vulpecula, about 64.5 light-years from Earth, there is a strange and beautiful planet. It’s called <strong>HD 189733 b</strong>, and when as... [Content truncated for brevity]</p>",
       "coverImage": "https://postimg.cc/dLBz0mts",
       "published": true,
       "createdAt": "2025-10-23T15:30:00Z",
-      "updatedAt": "2025-10-23T15:30:00Z"
-}
+      "updatedAt": "2025-10-23T15:30:00Z",
+      "tags": [
+        "space",
+        "astronomy",
+        "exoplanets"
+      ],
+      "author": "UselessButInteresting Team"
+    }
   ]
 }
+
 
 
 
